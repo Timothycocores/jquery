@@ -3,7 +3,57 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<title>JQUERY CHEAT SHEET</title>
+<script>
 
+$(document).ready(function(){
+//selecting element by ID
+$("#redSq").fadeOut(3000);
+//selecting element by CLASS
+$(".main").html("HELLO WORLD says jQUERY");
+//selecting element by TAGNAME
+
+function slideDownThrice(obj){
+$("#"+obj).slideDown(function(){
+$("#"+obj).css("display","none")
+});
+}
+
+var doIt = function(obj){
+
+for( x = 0; x < 3; x++ ){
+slideDownThrice(obj);
+
+}
+}
+
+
+$("#ball").click(function(){
+$("#ball").fadeOut(function(){
+$("#ball").fadeIn(function(){
+$("#ball").fadeOut(2999);
+setTimeout(function(){
+doIt("ball")
+}, 3000);
+});
+});
+});
+
+
+$("#ball2").mouseover(function(){
+$("#ball2").fadeOut(function(){
+$("#ball2").fadeIn(function(){
+$("#ball2").fadeOut(2999);
+setTimeout(function(){
+doIt("ball2")
+}, 3000);
+});
+});
+});
+
+});
+
+
+</script>
 	<style>
 #redSq{
 width:300px;
