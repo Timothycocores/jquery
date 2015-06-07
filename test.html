@@ -5,6 +5,7 @@
 	<title>JQUERY CHEAT SHEET</title>
 <script>
 
+
 $(document).ready(function(){
 //selecting element by ID
 $("#redSq").fadeOut(3000);
@@ -54,7 +55,23 @@ doIt("ball2")
 
 
 </script>
+
 	<style>
+  ul {
+    margin-left: 20px;
+    color: blue;
+  }
+  li {
+    cursor: default;
+  }
+  li.active {
+    background: black;
+    color: white;
+  }
+  span {
+    color:red;
+  }
+  
 #redSq{
 width:300px;
 height:300px;
@@ -111,6 +128,30 @@ $( "#go" ).click(function() {
     borderWidth: "10px"
   }, 1500 );
 });
+</script>
+
+<ul>
+  <li>Milk</li>
+  <li>White</li>
+  <li>Carrots</li>
+  <li>Orange</li>
+  <li>Broccoli</li>
+  <li>Green</li>
+</ul>
+ 
+<script>
+$( "li" )
+  .filter( ":odd" )
+    .hide()
+  .end()
+  .filter( ":even" )
+    .hover(function() {
+      $( this )
+        .toggleClass( "active" )
+        .next()
+          .stop( true, true )
+          .slideToggle();
+    });
 </script>
 </body>
 </html>
